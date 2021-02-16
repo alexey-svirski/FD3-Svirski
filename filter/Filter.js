@@ -18,9 +18,8 @@ var Filter = React.createClass({
   },
 
   checkboxChecked: function () {
-      var copy1 = Object.assign([], this.props.stringArr);
     if (!this.state.isSorted) 
-      this.setState({ isSorted: true, currArr: copy1.sort() });
+      this.setState({ isSorted: true, currArr: [...this.props.stringArr].sort() });
     else
         this.setState({ isSorted: false, currArr: this.props.stringArr });
   },
