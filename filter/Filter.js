@@ -53,7 +53,7 @@ var Filter = React.createClass({
       React.DOM.br(),
       React.DOM.select(
         { className: "Select", size: this.props.stringArr.length },
-        newArr.map((v) => React.DOM.option({ label: v }))
+        newArr.map((v, i) => React.DOM.option({ label: v, key: i }))
       )
     );
   },
