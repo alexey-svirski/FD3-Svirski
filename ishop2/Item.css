@@ -1,0 +1,26 @@
+.Item {
+  padding: 2px;
+  border: double gray 2px;
+  display: flex;
+}
+
+.ItemSelected {
+  background-color: goldenrod;
+  padding: 2px;
+  border: double gray 2px;
+  display: flex;
+}
+
+.Item span {
+  width: 25%;
+  font-weight: bold;
+  align-self: center;
+  text-align: center;
+}
+
+.ItemSelected span {
+  width: 25%;
+  font-weight: bold;
+  align-self: center;
+  text-align: center;
+}

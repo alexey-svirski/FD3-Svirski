@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ishop2</title>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+    <script src="Ishop2.js"></script>
+    <link rel="stylesheet" type="text/css" href="Ishop2.css" />
+
+    <script src="Item.js"></script>
+    <link rel="stylesheet" type="text/css" href="Item.css" />
+
+    <script>
+      var ishopName = "Интернет-магазин №1";
+      var itemsArr = [
+        {
+          title: "Товар №1",
+          code: 1,
+          price: 2,
+          url: "http://1.com/",
+          count: 435,
+        },
+        {
+          title: "Товар №2",
+          code: 2,
+          price: 11,
+          url: "http://2.com/",
+          count: 0,
+        },
+        {
+          title: "Товар №3",
+          code: 3,
+          price: 345,
+          url: "http://3.com/",
+          count: 4,
+        },
+        {
+          title: "Товар №4",
+          code: 4,
+          price: 455,
+          url: "http://4.com/",
+          count: 44,
+        },
+      ];
+
+      ReactDOM.render(
+        React.createElement(Ishop2, {
+          shopName: ishopName,
+          items: itemsArr,
+        }),
+        document.getElementById("container")
+      );
+    </script>
+  </body>
+</html>
