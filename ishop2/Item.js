@@ -7,32 +7,25 @@ var Item = React.createClass({
     url: React.PropTypes.string.isRequired,
     price: React.PropTypes.number.isRequired,
     count: React.PropTypes.number.isRequired,
+    cbIsSelected: React.PropTypes.func.isRequired,
+    cbIsDelete: React.PropTypes.func.isRequired,
+    selectedItemCode: React.PropTypes.number,
   },
 
-  getInitialState: function () {
-    return {
-      isSelected: false,
-      toDelete: false,
-    };
-  },
-
-  selectItem: function () {
-    if (!this.state.isSelected) {
-        this.setState({ isSelected: true });
-    }
-    else this.setState({ isSelected: false });
-  },
-
-  deleteItemMessage: function (EO) {
+  itemToDelete: function (EO) {
     EO.stopPropagation();
-    this.setState({toDelete: confirm("Удалить товар?")});
+    this.props.cbIsDelete(this.props.code);
+  },
+
+  itemSelected: function() {
+    this.props.cbIsSelected(this.props.code);
   },
 
   render: function () {
-    if(!this.state.toDelete) return React.DOM.div(
+    return React.DOM.div(
       {
-        className: this.state.isSelected ? "ItemSelected" : "Item",
-        onClick: this.selectItem,
+        className: this.props.selectedItemCode == this.props.code ? "ItemSelected" : "Item",
+        onClick: this.itemSelected,
       },
       React.DOM.span({ className: "Title" }, this.props.title),
       React.DOM.span({ className: "Price" }, this.props.price),
@@ -41,9 +34,8 @@ var Item = React.createClass({
       React.DOM.input({
         type: "button",
         value: "Delete",
-        onClick: this.deleteItemMessage,
+        onClick: this.itemToDelete,
       })
     );
-    else return null;
   },
 });

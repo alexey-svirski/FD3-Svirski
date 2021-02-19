@@ -14,8 +14,31 @@ var Ishop2 = React.createClass({
     ).isRequired,
   },
 
+  getInitialState: function () {
+    return {
+      itemSelected: null,
+      currentState: this.props.items,
+    };
+  },
+
+  cbIsSelected: function (recievedCode) {
+    this.setState({ itemSelected: recievedCode });
+  },
+
+  cbIsDelete: function (recievedCode) {
+    var itemSelected2 = this.state.itemSelected;
+    var anotherArr = this.state.currentState.filter(f);
+    function f(v) {
+      if (recievedCode === v.code && recievedCode === itemSelected2)
+        return confirm("Удалить товар?") ? null : v;
+      else return v;
+    }
+    this.setState({ currentState: anotherArr });
+  },
+
   render: function () {
-    var itemsCode = this.props.items.map((v) =>
+    var itemSelected2 = this.state.itemSelected;
+    var itemsCode = this.state.currentState.map((v) =>
       React.createElement(Item, {
         key: v.code,
         code: v.code,
@@ -23,6 +46,9 @@ var Ishop2 = React.createClass({
         price: v.price,
         url: v.url,
         count: v.count,
+        cbIsSelected: this.cbIsSelected,
+        cbIsDelete: this.cbIsDelete,
+        selectedItemCode: itemSelected2,
       })
     );
 
