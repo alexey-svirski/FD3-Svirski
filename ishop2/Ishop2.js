@@ -26,10 +26,9 @@ var Ishop2 = React.createClass({
   },
 
   cbIsDelete: function (recievedCode) {
-    var itemSelected2 = this.state.itemSelected;
     var anotherArr = this.state.currentState.filter(f);
     function f(v) {
-      if (recievedCode === v.code && recievedCode === itemSelected2)
+      if (recievedCode === v.code)
         return confirm("Удалить товар?") ? null : v;
       else return v;
     }
