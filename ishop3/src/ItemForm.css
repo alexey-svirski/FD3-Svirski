@@ -1,0 +1,9 @@
+.Label {
+    color: red
+}
+
+.TextLabel {
+    display: block;
+    float: left;
+    width: 70px
+}

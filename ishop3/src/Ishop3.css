@@ -1,0 +1,17 @@
+.ItemsTable {
+    border: double gray 3px;
+    width: 500px;
+    padding: 3px 3px;
+    background-color: #f0f0f0;
+  }
+
+  .ItemsTable .ShopName {
+    padding: 3px 7px 7px 7px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .LabelText {
+    font-size: x-large;
+    color: blue;
+  }

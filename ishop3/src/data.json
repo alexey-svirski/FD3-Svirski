@@ -1,0 +1,30 @@
+[
+    {
+      "title": "Товар №1",
+      "code": 1,
+      "price": 2,
+      "url": "http://1.com/",
+      "count": 435
+    },
+    {
+      "title": "Товар №2",
+      "code": 2,
+      "price": 11,
+      "url": "http://2.com/",
+      "count": 0
+    },
+    {
+      "title": "Товар №3",
+      "code": 3,
+      "price": 345,
+      "url": "http://3.com/",
+      "count": 4
+    },
+    {
+      "title": "Товар №4",
+      "code": 4,
+      "price": 455,
+      "url": "http://4.com/",
+      "count": 44
+    }
+  ]
