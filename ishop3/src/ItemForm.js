@@ -82,7 +82,7 @@ class ItemForm extends React.Component {
         <label className="TextLabel">Name:</label>
         <input
           type="text"
-          value={this.props.title}
+          value={this.state.textName}
           onChange={this.textNameChanged}
         ></input>
         {innerTextName}
@@ -90,7 +90,7 @@ class ItemForm extends React.Component {
         <label className="TextLabel">Price:</label>
         <input
           type="text"
-          value={this.props.price}
+          value={this.state.textPrice}
           onChange={this.textPriceChanged}
         ></input>
         {innerTextPrice}
@@ -98,7 +98,7 @@ class ItemForm extends React.Component {
         <label className="TextLabel">URL:</label>
         <input
           type="text"
-          value={this.props.url}
+          value={this.state.textURL}
           onChange={this.textURLChanged}
         ></input>
         {innerTextURL}
@@ -106,7 +106,7 @@ class ItemForm extends React.Component {
         <label className="TextLabel">Quantity:</label>
         <input
           type="text"
-          value={this.props.count}
+          value={this.state.textQuantity}
           onChange={this.textQuantityChanged}
         ></input>
         {innerTextQuantity}

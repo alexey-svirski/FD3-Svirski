@@ -26,7 +26,7 @@ class Ishop3 extends React.Component {
     // 0 - не редактируется, 1 - редактируется, 2 - добавляется новый товар,
     //3 - в карточку внесены изменения, но не отвалидированы
     editingMode: 0,
-    codeCounter: this.props.items.length + 1
+    codeCounter: this.props.items.length + 1,
   };
 
   cbItemSelected = (recievedCode) => {
@@ -70,7 +70,7 @@ class Ishop3 extends React.Component {
         cbEditStarted: this.cbEditStarted,
       };
       this.state.currentState.push(newItemToAdd);
-      this.setState({codeCounter: this.state.codeCounter + 1});
+      this.setState({ codeCounter: this.state.codeCounter + 1 });
     }
     if (this.state.editingMode === 3) {
       this.state.currentState.forEach((v) => {
@@ -94,7 +94,7 @@ class Ishop3 extends React.Component {
     }
     if (this.state.itemSelectedIndex)
       this.setState({ itemSelectedIndex: this.state.itemSelectedIndex - 1 });
-    this.setState({itemSelectedCode: null});
+    this.setState({ itemSelectedCode: null });
   };
 
   cbEditAndSelectToBlock = () => {
@@ -159,7 +159,8 @@ class Ishop3 extends React.Component {
       ></ItemForm>
     );
 
-    if (this.state.editingMode === 1) var labelText = "Edit existing product";
+    if (this.state.editingMode === 1 || this.state.editingMode === 3)
+      var labelText = "Edit existing product";
     if (this.state.editingMode === 2) labelText = "Add new product";
 
     return (
