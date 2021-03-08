@@ -93,7 +93,8 @@ class Ishop3 extends React.Component {
       this.setState({ currentState: anotherArr });
     }
     if (this.state.itemSelectedIndex)
-      this.setState({ itemSelectedIndex: this.state.itemSelectedIndex - 1 })
+      this.setState({ itemSelectedIndex: this.state.itemSelectedIndex - 1 });
+    this.setState({itemSelectedCode: null});
   };
 
   cbEditAndSelectToBlock = () => {
