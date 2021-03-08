@@ -12,15 +12,25 @@ class ItemForm extends React.Component {
     mode: PropTypes.number.isRequired,
     cbEditCancelled: PropTypes.func,
     cbEditFinished: PropTypes.func,
-    cbEditAndSelectToBlock: PropTypes.func
+    cbEditAndSelectToBlock: PropTypes.func,
   };
 
   state = {
     textName: this.props.title,
     textPrice: this.props.price,
     textURL: this.props.url,
-    textQuantity: this.props.count
+    textQuantity: this.props.count,
   };
+
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.title !== this.props.title)
+      this.setState({
+        textName: this.props.title,
+        textPrice: this.props.price,
+        textURL: this.props.url,
+        textQuantity: this.props.count,
+      });
+  }
 
   verifyForm = () => {
     this.props.cbEditFinished(
@@ -38,22 +48,22 @@ class ItemForm extends React.Component {
 
   textNameChanged = (EO) => {
     this.setState({ textName: EO.target.value });
-    if(this.props.mode !== 2) this.props.cbEditAndSelectToBlock();
+    if (this.props.mode !== 2) this.props.cbEditAndSelectToBlock();
   };
 
   textPriceChanged = (EO) => {
     this.setState({ textPrice: parseInt(EO.target.value) });
-    if(this.props.mode !== 2) this.props.cbEditAndSelectToBlock();
+    if (this.props.mode !== 2) this.props.cbEditAndSelectToBlock();
   };
 
   textURLChanged = (EO) => {
     this.setState({ textURL: EO.target.value });
-    if(this.props.mode !== 2) this.props.cbEditAndSelectToBlock();
+    if (this.props.mode !== 2) this.props.cbEditAndSelectToBlock();
   };
 
   textQuantityChanged = (EO) => {
     this.setState({ textQuantity: parseInt(EO.target.value) });
-    if(this.props.mode !== 2) this.props.cbEditAndSelectToBlock();
+    if (this.props.mode !== 2) this.props.cbEditAndSelectToBlock();
   };
 
   render() {
