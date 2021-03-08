@@ -10,9 +10,9 @@ class Item extends React.Component {
     price: PropTypes.number.isRequired,
     count: PropTypes.number.isRequired,
     mode: PropTypes.number.isRequired,
-    cbItemSelected: PropTypes.func.isRequired,
-    cbIsDelete: PropTypes.func.isRequired,
-    cbEditStarted: PropTypes.func.isRequired,
+    cbItemSelected: PropTypes.func,
+    cbIsDelete: PropTypes.func,
+    cbEditStarted: PropTypes.func,
     selectedItemCode: PropTypes.number
   };
 
