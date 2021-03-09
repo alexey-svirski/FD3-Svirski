@@ -16,10 +16,10 @@ class ItemForm extends React.Component {
   };
 
   state = {
-    textName: this.props.title,
-    textPrice: this.props.price,
-    textURL: this.props.url,
-    textQuantity: this.props.count,
+    textName: "",
+    textPrice: "",
+    textURL: "",
+    textQuantity: ""
   };
 
   componentDidUpdate = (prevProps) => {
