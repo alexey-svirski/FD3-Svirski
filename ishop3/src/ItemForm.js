@@ -22,6 +22,21 @@ class ItemForm extends React.Component {
     textQuantity: ""
   };
 
+  componentDidMount = () => {
+    if(this.props.mode === 1) this.setState({
+      textName: this.props.title,
+      textPrice: this.props.price,
+      textURL: this.props.url,
+      textQuantity: this.props.count,
+    });
+    else this.setState({
+      textName: "",
+      textPrice: "",
+      textURL: "",
+      textQuantity: "",
+    });
+  }
+
   componentDidUpdate = (prevProps) => {
     if (prevProps.title !== this.props.title)
       this.setState({
@@ -30,6 +45,7 @@ class ItemForm extends React.Component {
         textURL: this.props.url,
         textQuantity: this.props.count,
       });
+      console.log("111");
   }
 
   verifyForm = () => {
