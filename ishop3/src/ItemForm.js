@@ -29,12 +29,6 @@ class ItemForm extends React.Component {
       textURL: this.props.url,
       textQuantity: this.props.count,
     });
-    else this.setState({
-      textName: "",
-      textPrice: "",
-      textURL: "",
-      textQuantity: "",
-    });
   }
 
   componentDidUpdate = (prevProps) => {
@@ -45,7 +39,6 @@ class ItemForm extends React.Component {
         textURL: this.props.url,
         textQuantity: this.props.count,
       });
-      console.log("111");
   }
 
   verifyForm = () => {
