@@ -1,0 +1,22 @@
+.SelectVideo {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  height: 360px;
+  margin-bottom: 70px;
+  margin-left: 70px;
+}
+
+.SelectVideo:hover {
+  border: 5px solid red;
+  cursor: pointer;
+}
+
+.Player {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  height: 360px;
+  margin-bottom: 70px;
+  margin-left: 70px;
+}

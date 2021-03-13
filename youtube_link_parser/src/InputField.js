@@ -10,12 +10,6 @@ class InputField extends React.Component {
     inputText: "",
   };
 
-  requestIsDone = () => {
-    this.props.cbRequestFinished(
-      this.state.inputText
-    );
-  };
-
   searchRequest = (EO) => {
     this.setState({ inputText: EO.target.value });
   };
@@ -31,7 +25,7 @@ class InputField extends React.Component {
         <input
           type="button"
           value="Get YouTube Video"
-          onClick={this.requestIsDone}
+          onClick={() => this.props.cbRequestFinished(this.state.inputText)}
         />
         <br />
         <br />
