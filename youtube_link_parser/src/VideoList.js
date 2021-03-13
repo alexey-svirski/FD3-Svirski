@@ -19,7 +19,7 @@ class VideoList extends React.Component {
             title={EO.target.alt}
             src={src}
             height="480"
-            width="36"
+            width="360"
           ></iframe>
         );
       }
