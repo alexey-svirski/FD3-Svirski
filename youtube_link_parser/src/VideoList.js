@@ -18,8 +18,8 @@ class VideoList extends React.Component {
             key={EO.target.id}
             title={EO.target.alt}
             src={src}
-            width="480"
-            height="36"
+            height="480"
+            width="36"
           ></iframe>
         );
       }
@@ -33,7 +33,7 @@ class VideoList extends React.Component {
       let response = await fetch(
         "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" +
           recievedRequest +
-          "&maxResults=20&key=AIzaSyAP9fCueWS6cSEoUx7DKYcx6euU0Apsv54",
+          "&maxResults=20&key=AIzaSyBGJ2rIrLjnI-Kna0qLy42XQa7PI67rGv8",
         { method: "get" }
       );
       var data = await response.json();
