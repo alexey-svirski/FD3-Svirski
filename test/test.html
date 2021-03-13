@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube API</title>
+  </head>
+  <body>
+    <input type="text" id="readRequest" />
+    <input type="button" value="Get YouTube Video" id="button1" /><br /><br />
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      "use strict";
+      function onYouTubeIframeAPIReady() {
+        document
+          .getElementById("button1")
+          .addEventListener("click", getVideoList);
+        //document
+        //  .getElementById("button1")
+        //  .addEventListener("keypress", getVideoList);
+      }
+
+      function searchByKeyword() {}
+
+      async function getVideoList() {
+        let link = document.getElementById("readRequest").value;
+
+        try {
+          let response = await fetch(
+            "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" +
+              link +
+              "&maxResults=20&key=AIzaSyAP9fCueWS6cSEoUx7DKYcx6euU0Apsv54",
+            { method: "get" }
+          );
+          let data = await response.json();
+          //console.log(data);
+          for (var i in data.items) {
+            var finalId =
+              data.items[i].id.channelId ||
+              data.items[i].id.playlistId ||
+              data.items[i].id.videoId;
+            var videoTitle = data.items[i].snippet.title;
+            console.log(finalId, videoTitle);
+            let newFrame = document.createElement("iframe");
+            //let br = document.createElement("br");
+            //let newLabel = document.createElement("label");
+            //newFrame.id = "player";
+            //newFrame.type = "text/html";
+            //newFrame.width = "640";
+            //newFrame.height = "360";
+            newFrame.src = "https://www.youtube.com/embed/" + finalId;
+            //newLabel.innerHTML = videoTitle;
+            document.body.appendChild(newFrame);
+           // document.body.appendChild(br);
+            //document.body.appendChild(newLabel);
+            //document.body.appendChild(br);
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    </script>
+  </body>
+</html>
