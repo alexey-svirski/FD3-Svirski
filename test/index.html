@@ -28,21 +28,10 @@
         let id = /http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/.exec(
           link
         );
-        //console.log(id[1]);
 
         document.getElementById("player").src =
           "http://www.youtube.com/embed/" + id[1] + "?enablejsapi=1";
       }
-      //try {
-      //let response = await fetch(
-      //   "https://www.googleapis.com/youtube/v3/videos?id="+id+"&key=AIzaSyAP9fCueWS6cSEoUx7DKYcx6euU0Apsv54&part=snippet",
-      //  { method: "get" }
-      //);
-      //let data = await response.json();
-      //console.log(data.items[0].id);
-      //} catch (error) {
-      //  console.error(error);
-      //}
     </script>
   </body>
 </html>

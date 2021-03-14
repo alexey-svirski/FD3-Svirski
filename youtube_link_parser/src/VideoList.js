@@ -4,7 +4,6 @@ import "./VideoList.css";
 
 class VideoList extends React.Component {
   state = {
-    //currentPage: 1,
     arrToRender: [],
     //totalResults: null,
   };
@@ -29,7 +28,7 @@ class VideoList extends React.Component {
     this.setState({ arrToRender: tempArr });
   };
 
-  cbRequestFinished = async (recievedRequest) => {
+  cbSearchRequestFinished = async (recievedRequest) => {
     try {
       const response = await fetch(
         "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" +
@@ -64,7 +63,7 @@ class VideoList extends React.Component {
   render() {
     return (
       <div>
-        <InputField cbRequestFinished={this.cbRequestFinished}></InputField>
+        <InputField cbSearchRequestFinished={this.cbSearchRequestFinished}/>
         {this.state.arrToRender}
       </div>
     );

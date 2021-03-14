@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 
 class InputField extends React.Component {
   static propTypes = {
-    cbSearchRequestFinished: PropTypes.func
+    cbParseRequestFinished: PropTypes.func
   };
 
   state = {
     inputText: ""
   };
 
-  searchRequest = (EO) => {
+  parseRequest = (EO) => {
     this.setState({ inputText: EO.target.value });
   };
 
@@ -20,12 +20,12 @@ class InputField extends React.Component {
         <input
           type="text"
           value={this.state.inputText}
-          onChange={this.searchRequest}
+          onChange={this.parseRequest}
         />
         <input
           type="button"
           value="Search YouTube Video"
-          onClick={() => this.props.cbSearchRequestFinished(this.state.inputText)}
+          onClick={() => this.props.cbParseRequestFinished(this.state.inputText)}
         />
         <br />
         <br />
