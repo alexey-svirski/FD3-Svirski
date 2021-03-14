@@ -4,12 +4,12 @@ import "./EmbeddedVideo.css";
 
 class EmbeddedVideo extends React.Component {
   state = {
-    youtubeVideoId: ""
+    youtubeVideoId: "",
   };
 
-  //to add a new "source" you should 
+  //to add a new "source" you should
   //1) define a new state with ID connected to this "source"
-  //2) write a new RegExp inside the callback 
+  //2) write a new RegExp inside the callback
   //3) refresh the newly defined state using a new parsing rule
 
   cbParseRequestFinished = (recievedRequest) => {
@@ -18,7 +18,8 @@ class EmbeddedVideo extends React.Component {
     );
 
     this.setState({
-      youtubeVideoId: "http://www.youtube.com/embed/" + id[1] + "?enablejsapi=1",
+      youtubeVideoId:
+        "http://www.youtube.com/embed/" + id[1] + "?enablejsapi=1",
     });
   };
 
@@ -26,7 +27,8 @@ class EmbeddedVideo extends React.Component {
     return (
       <div>
         <InputField cbParseRequestFinished={this.cbParseRequestFinished} />
-        <iframe className="Player"
+        <iframe
+          className="Player"
           title="player"
           src={this.state.youtubeVideoId}
         />
