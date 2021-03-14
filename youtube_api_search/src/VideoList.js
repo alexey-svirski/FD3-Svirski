@@ -63,7 +63,7 @@ class VideoList extends React.Component {
   render() {
     return (
       <div>
-        <InputField cbSearchRequestFinished={this.cbSearchRequestFinished}/>
+        <InputField cbSearchRequestFinished={this.cbSearchRequestFinished} />
         {this.state.arrToRender}
       </div>
     );
