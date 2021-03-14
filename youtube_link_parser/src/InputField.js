@@ -7,7 +7,7 @@ class InputField extends React.Component {
   };
 
   state = {
-    inputText: "",
+    inputText: ""
   };
 
   searchRequest = (EO) => {

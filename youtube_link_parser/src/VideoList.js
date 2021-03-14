@@ -6,6 +6,7 @@ class VideoList extends React.Component {
   state = {
     //currentPage: 1,
     arrToRender: [],
+    //totalResults: null,
   };
 
   showIframe = (EO) => {
@@ -37,30 +38,23 @@ class VideoList extends React.Component {
         { method: "get" }
       );
       const data = await response.json();
-      console.log(data);
+      //console.log(data);
+      //this.setState({totalResults: data.pageInfo.totalResults});
       let tempArr = [];
-      //for needs fix to map
-      for (let i in data.items) {
-        if (!data.items[i].id.channelId) {
-          const imgURL = data.items[i].snippet.thumbnails.high.url;
-          const toKey =
-            data.items[i].id.videoId ||
-            data.items[i].id.playlistId ||
-            data.items[i].id.channelId;
-          const divWithIMG = (
+      data.items.forEach((v) => {
+        if (!v.id.channelId) {
+          const imgURL = v.snippet.thumbnails.high.url;
+          const toKey = v.id.videoId || v.id.playlistId;
+          var divWithIMG = (
             <div key={toKey} onClick={this.showIframe} className="SelectVideo">
-              <img
-                id={toKey}
-                src={imgURL}
-                alt={data.items[i].snippet.title}
-              ></img>
+              <img id={toKey} src={imgURL} alt={v.snippet.title}></img>
               <br />
-              {data.items[i].snippet.title}
+              {v.snippet.title}
             </div>
           );
           tempArr.push(divWithIMG);
         }
-      }
+      });
       this.setState({ arrToRender: tempArr });
     } catch (error) {
       console.log(error);
