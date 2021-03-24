@@ -29,8 +29,6 @@ class InputField extends React.Component {
             this.props.cbSearchRequestFinished(this.state.inputText)
           }
         />
-        <br />
-        <br />
       </div>
     );
   }

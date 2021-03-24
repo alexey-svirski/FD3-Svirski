@@ -60,6 +60,22 @@ class VideoList extends React.Component {
     }
   };
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+  handleScroll = (e) => {
+    // use window offset and boundingRect 
+    //const { ...someAttributes } = window; 
+    //const { ...someBoundingRect } = this.component 
+    // some logic prevent re-render 
+    //if ( ... ) return;
+    // do some math 
+   // const newIndex = ...
+    // and how many rows should be rendered 
+    //this.setState({index: newIndex })
+  }
+  
+
   render() {
     return (
       <div>

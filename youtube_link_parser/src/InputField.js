@@ -24,13 +24,11 @@ class InputField extends React.Component {
         />
         <input
           type="button"
-          value="Search YouTube Video"
+          value="Get Video"
           onClick={() =>
             this.props.cbParseRequestFinished(this.state.inputText)
           }
         />
-        <br />
-        <br />
       </div>
     );
   }
