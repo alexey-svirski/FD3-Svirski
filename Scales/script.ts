@@ -56,16 +56,16 @@
         }
       }
 
-      let ourScales = new Scales();
-      let apple1 = new Apple();
-      let apple2 = new Apple();
+      let ourScales: Scales = new Scales();
+      let apple1: Apple = new Apple();
+      let apple2: Apple = new Apple();
       apple1.name = "Яблоко из Польши";
       apple1.scale = 200;
       apple2.name = "Яблоко из Беларуси";
       apple2.scale = 300;
 
-      let tomato1 = new Tomato();
-      let tomato2 = new Tomato();
+      let tomato1: Tomato = new Tomato();
+      let tomato2: Tomato = new Tomato();
       tomato1.name = "Помидор из Испании";
       tomato1.scale = 50;
       tomato2.name = "Помидор из России";
