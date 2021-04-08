@@ -104,11 +104,6 @@ se1.addItem(product3);
 se2.addItem(product3);
 se2.addItem(product1);
 
-console.log(se1.getItem(0));
-console.log(se1.getItem(1));
-console.log(se1.getItem(2));
-console.log(se2.getItem(0));
-
 arrScales.add(se1);
 lsScales.add(se2);
 
