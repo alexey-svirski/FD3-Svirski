@@ -12,8 +12,12 @@ interface IStorageEngine {
 class Scales<StorageEngine extends IStorageEngine> {
   productsOnScales: StorageEngine;
 
-  add(_storageEngine: StorageEngine): void {
+  constructor(_storageEngine: StorageEngine) {
     this.productsOnScales = _storageEngine;
+  }
+
+  add(product: Product): void {
+    this.productsOnScales.addItem(product);
   }
   getSumScale(): number {
     let sum: number = 0;
@@ -83,14 +87,14 @@ class Product {
   }
 }
 
-let arrScales = new Scales();
-let lsScales = new Scales();
-
 let se1: ScalesStorageEngineArray = uniFactory(ScalesStorageEngineArray);
 localStorage.clear();
 let se2: ScalesStorageEngineLocalStorage = uniFactory(
   ScalesStorageEngineLocalStorage
 );
+
+let arrScales = new Scales(se1);
+let lsScales = new Scales(se2);
 
 let product1 = new Product("Яблоко", 50);
 let product2 = new Product("Груша", 70);
@@ -104,8 +108,8 @@ se1.addItem(product3);
 se2.addItem(product3);
 se2.addItem(product1);
 
-arrScales.add(se1);
-lsScales.add(se2);
+arrScales.add(product1);
+lsScales.add(product1);
 
 console.log("Список продуктов на весах (arr): " + arrScales.getNameList());
 console.log("Список продуктов на весах (ls): " + lsScales.getNameList());
